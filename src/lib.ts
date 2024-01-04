@@ -28,7 +28,7 @@ export const getDeviceType = (req: Request) => {
 
 // Env variables defined in wrangler.toml
 export interface Env {
-  CLOUDINARY_CLOUD_ID: string;
+  CLOUDINARY_CLOUD_NAME: string;
   TEST_ORIGIN?: string;
   TEST_WORKER_HOST?: string;
 }

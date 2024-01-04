@@ -37,7 +37,7 @@ To use this in production you'd need to add a `Worker route` in your website at 
 This is a standard file for Cloudflare workers, where you specify configuration values and environment variables.
 
 1. `name` This is the name of the Cloudflare worker you created on your Cloudflare dashboard
-2. `CLOUDINARY_CLOUD_ID` This is the id of your cloud environment at Cloudinary, its likely a 10 character alphanumeric string
+2. `CLOUDINARY_CLOUD_NAME` This is the name of your cloud environment at Cloudinary, it's likely a 8–10 character alphanumeric string
 3. `TEST_ORIGIN` is only for use in testing (not production), it should be your host name like `google.com`
 4. `TEST_WORKER_HOST` is only for use in testing (not production), it should be your worker's hostname, likely a value like `your-worker.your-domain.workers.dev`
 
