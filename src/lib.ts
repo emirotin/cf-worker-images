@@ -28,14 +28,14 @@ export const getDeviceType = (req: Request) => {
 
 // Env variables defined in wrangler.toml
 export interface Env {
-  ORIGIN: string;
-  WORKER_HOST: string | undefined;
-  CLOUDINARY_CLOUD: string;
+  CLOUDINARY_CLOUD_ID: string;
+  TEST_ORIGIN?: string;
+  TEST_WORKER_HOST?: string;
 }
 
 export const getOriginalRequestHostReplace = (env: Env, request: Request) => {
-  if (env.WORKER_HOST) {
-    const url = request.url.replace(env.ORIGIN, env.WORKER_HOST);
+  if (env.TEST_WORKER_HOST && env.TEST_ORIGIN) {
+    const url = request.url.replace(env.TEST_ORIGIN, env.TEST_WORKER_HOST);
     console.log(`Processing ${url}`);
     return new Request(url, request);
   }
@@ -44,8 +44,8 @@ export const getOriginalRequestHostReplace = (env: Env, request: Request) => {
 };
 
 export const getActualRequest = (env: Env, request: Request) => {
-  if (env.WORKER_HOST) {
-    const url = request.url.replace(env.WORKER_HOST, env.ORIGIN);
+  if (env.TEST_WORKER_HOST && env.TEST_ORIGIN) {
+    const url = request.url.replace(env.TEST_WORKER_HOST, env.TEST_ORIGIN);
     console.log(`Processing ${url}`);
     return new Request(url, request);
   }

@@ -1,8 +1,3 @@
-name = "cf-worker-images"
+name = "image-to-webp"
 main = "src/index.ts"
 compatibility_date = "2023-02-20"
-
-[vars]
-ORIGIN = "syncwith.com"
-WORKER_HOST = "cf-worker-images.syncwith.workers.dev"
-CLOUDINARY_CLOUD = "dzbpp7iju"

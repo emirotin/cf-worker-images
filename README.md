@@ -22,10 +22,10 @@ This project requires:
 1. Clone the GitHub repository
 2. Create a new worker at Cloudflare, choose `HTTP Handler` as the type
 3. Replace values in `wrangler.toml` including: name, ORIGIN, WORKER_HOST, CLOUDINARY_CLOUD
-4. Run `yarn` to install dependencies
-5. Run `yarn deploy` to deploy the worker to Cloudflare, this uses the `name` field in `wrangler.toml` to find your worker, and Cloudflare will require you to login
+4. Run `pnpm i` to install dependencies
+5. Run `pnpm deploy` to deploy the worker to Cloudflare, this uses the `name` field in `wrangler.toml` to find your worker, and Cloudflare will require you to login
    - The first time you do this Cloudflare will launch your browser to let you authenticate
-6. Run `yarn tail` to see live logs from the worker
+6. Run `pnpm tail` to see live logs from the worker
 7. You should now be able to test your worker at a url like https://your-worker.your-domain.workers.dev
 
 ## Deploying to Production
@@ -37,9 +37,9 @@ To use this in production you'd need to add a `Worker route` in your website at 
 This is a standard file for Cloudflare workers, where you specify configuration values and environment variables.
 
 1. `name` This is the name of the Cloudflare worker you created on your Cloudflare dashboard
-2. `CLOUDINARY_CLOUD` This is the id of your cloud environment at Cloudinary, its likely a 10 character alphanumeric string
-3. `ORIGIN` is only for use in testing (not production), it should be your host name like `google.com`
-4. `WORKER_HOST` is only for use in testing (not production), it should be your worker's hostname, likely a value like `your-worker.your-domain.workers.dev`
+2. `CLOUDINARY_CLOUD_ID` This is the id of your cloud environment at Cloudinary, its likely a 10 character alphanumeric string
+3. `TEST_ORIGIN` is only for use in testing (not production), it should be your host name like `google.com`
+4. `TEST_WORKER_HOST` is only for use in testing (not production), it should be your worker's hostname, likely a value like `your-worker.your-domain.workers.dev`
 
 ## Notes
 

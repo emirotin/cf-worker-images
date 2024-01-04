@@ -8,13 +8,13 @@ export default {
   async fetch(
     origRequest: Request,
     env: Env,
-    ctx: ExecutionContext
+    _ctx: ExecutionContext
   ): Promise<Response> {
     console.log(origRequest.url);
     const request = getActualRequest(env, origRequest);
 
     // If its a request for an image, and its NOT a request from Cloudinary for a source iamge
-    // Then we want to handle it and return an optimized images from Cloundary
+    // Then we want to handle it and return an optimized images from Cloudinary
     if (isImageRequest(request) && !isCloudinaryRequest(request)) {
       const imageRequest = new Request(
         getImageOriginUrl(env, request),

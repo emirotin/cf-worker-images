@@ -115,7 +115,7 @@ export const getImageOriginUrl = (env: Env, request: Request) => {
   parsed.searchParams.delete(PARAM_POSTER);
 
   const url = `https://res.cloudinary.com/${
-    env.CLOUDINARY_CLOUD
+    env.CLOUDINARY_CLOUD_ID
   }/image/fetch/${options.join(",")}/${parsed.toString()}`;
   console.log("Rewriting image origin url", url);
   return url;
