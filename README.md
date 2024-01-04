@@ -23,7 +23,7 @@ This project requires:
 2. Create a new worker at Cloudflare, choose `HTTP Handler` as the type
 3. Replace values in `wrangler.toml` including: name, ORIGIN, WORKER_HOST, CLOUDINARY_CLOUD
 4. Run `pnpm i` to install dependencies
-5. Run `pnpm deploy` to deploy the worker to Cloudflare, this uses the `name` field in `wrangler.toml` to find your worker, and Cloudflare will require you to login
+5. Run `pnpm run deploy` to deploy the worker to Cloudflare, this uses the `name` field in `wrangler.toml` to find your worker, and Cloudflare will require you to login
    - The first time you do this Cloudflare will launch your browser to let you authenticate
 6. Run `pnpm tail` to see live logs from the worker
 7. You should now be able to test your worker at a url like https://your-worker.your-domain.workers.dev
@@ -32,7 +32,7 @@ This project requires:
 
 To use this in production you'd need to add a `Worker route` in your website at Cloudflare, and bind it to the worker. You'd then need to modify the values in `worker.toml`
 
-## Worker.toml
+## wrangler.toml
 
 This is a standard file for Cloudflare workers, where you specify configuration values and environment variables.
 
